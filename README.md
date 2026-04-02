@@ -95,8 +95,8 @@ cd inventory-system
 
 ```
 python -m venv venv
-source venv/bin/activate  # Linux / Mac
-venv\Scripts\activate     # Windows
+source venv/bin/activate  
+venv\Scripts\activate
 ```
 
 ### 3. Install dependencies
@@ -173,7 +173,7 @@ Contributions, issues, and feature requests are welcome.
 
 ## 📄 License
 
-This project is open-source and available under the MIT License.
+This project is open-source and use it for educational purpose only not in business sector
 
 ---
 
