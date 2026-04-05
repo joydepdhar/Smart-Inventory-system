@@ -2,6 +2,10 @@ from rest_framework import viewsets, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
+from rest_framework.permissions import IsAuthenticated
+from users.permissions import IsManager
+
+
 
 from inventory.models import Stock, StockMovement
 from inventory.serializers import (
@@ -22,6 +26,8 @@ from services.inventory_service import InventoryService
 # -------------------------------
 # Stock View (Read Only)
 # -------------------------------
+class StockInView(APIView):
+    permission_classes = [IsAuthenticated, IsManager]
 class StockViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Stock.objects.select_related('product', 'warehouse')
     serializer_class = StockSerializer
