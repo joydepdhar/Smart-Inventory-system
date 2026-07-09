@@ -6,6 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 class MeView(APIView):
     permission_classes = [IsAuthenticated]
 
+
     def get(self, request):
         return Response({
             "username": request.user.username,
